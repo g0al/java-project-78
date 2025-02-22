@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 /**
- * Javadoc for BaseSchema class
+ * Javadoc for BaseSchema class.
+ * @param <T> The type of the value to be validated.
  */
 public abstract class BaseSchema<T> {
 

@@ -5,7 +5,7 @@ import hexlet.code.schemas.NumberSchema;
 import hexlet.code.schemas.StringSchema;
 
 /**
- * Javadoc fo Validator class
+ * Javadoc for Validator class.
  */
 public class Validator {
 

@@ -3,7 +3,7 @@ package hexlet.code.schemas;
 import java.util.Objects;
 
 /**
- * Javadoc for StringSchema class
+ * Javadoc for StringSchema class.
  */
 public final class StringSchema extends BaseSchema<String> {
 
