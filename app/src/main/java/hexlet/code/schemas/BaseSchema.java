@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * Javadoc for BaseSchema class
+ */
 public abstract class BaseSchema<T> {
 
     private final Map<String, Predicate<T>> validations = new HashMap<>();

@@ -2,6 +2,9 @@ package hexlet.code.schemas;
 
 import java.util.Objects;
 
+/**
+ * Javadoc for BaseSchema class
+ */
 public final class NumberSchema extends BaseSchema<Integer> {
 
     public NumberSchema required() {
