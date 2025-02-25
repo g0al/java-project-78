@@ -15,6 +15,14 @@
 ## Description
 This Java project is aimed at demonstrating basic concepts and capabilities of the Java programming language. The project includes various components that will help developers better understand object-oriented programming principles and work with Java technologies.
 
+## Features
+- Basic Maven project structure
+- Examples of OOP concepts (classes, interfaces, inheritance)
+- Working with collections
+- Exception handling
+- File operations
+- Basic logging
+
 You can use next commands to manage the programm.
 
 ## Start
