@@ -9,3 +9,46 @@
 
 ### Java CI:
 [![Java CI](https://github.com/g0al/java-project-78/actions/workflows/gradle.yml/badge.svg)](https://github.com/g0al/java-project-78/actions/workflows/gradle.yml)
+
+# Java Project 78
+
+## Description
+This Java project is aimed at demonstrating basic concepts and capabilities of the Java programming language. The project includes various components that will help developers better understand object-oriented programming principles and work with Java technologies.
+
+You can use next commands to manage the programm.
+
+## Start
+
+```bash
+make
+```
+
+## Setup
+
+```bash
+make build
+```
+
+## Run
+
+```bash
+make run
+```
+
+## Run tests
+
+```bash
+make test
+```
+
+## Run checkstyle
+
+```bash
+make lint
+```
+
+## Check update dependencies and plugins
+
+```bash
+make update
+```
