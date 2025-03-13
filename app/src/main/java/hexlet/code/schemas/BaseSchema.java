@@ -13,7 +13,8 @@ import java.util.function.Predicate;
  */
 public abstract class BaseSchema<T> {
 
-    boolean strictNullChecking = false;
+    protected boolean strictNullChecking = false;
+
     /**
      * A map storing validation predicates associated with specific keys.
      */

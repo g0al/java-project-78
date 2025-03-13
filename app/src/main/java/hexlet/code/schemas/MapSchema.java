@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public final class MapSchema extends BaseSchema<Map<String, ?>> {
 
-
     public MapSchema() {
         addValidation("required", Objects::nonNull);
     }
+
     /**
      * Adds a validation to ensure that the map is not null.
      *

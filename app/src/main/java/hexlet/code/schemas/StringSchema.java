@@ -9,12 +9,12 @@ import java.util.Objects;
  */
 public final class StringSchema extends BaseSchema<String> {
 
-
     public StringSchema() {
         addValidation("required", obj -> {
             return Objects.nonNull(obj);
         });
     }
+
     /**
      * Adds a validation to ensure that the string is not null and not empty.
      *

@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public final class NumberSchema extends BaseSchema<Integer> {
 
-
     public NumberSchema() {
         addValidation("required", Objects::nonNull);
     }
+
     /**
      * Adds a validation to ensure that the number is not null.
      *
