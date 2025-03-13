@@ -9,15 +9,17 @@ import java.util.Objects;
  */
 public final class NumberSchema extends BaseSchema<Integer> {
 
+
+    public NumberSchema() {
+        addValidation("required", Objects::nonNull);
+    }
     /**
      * Adds a validation to ensure that the number is not null.
      *
      * @return The current NumberSchema instance for method chaining.
      */
     public NumberSchema required() {
-        addValidation("required", obj -> {
-            return Objects.nonNull(obj);
-        });
+        strictNullChecking = true;
         return this;
     }
 
@@ -42,7 +44,7 @@ public final class NumberSchema extends BaseSchema<Integer> {
      */
     public NumberSchema positive() {
         addValidation("positive", obj -> {
-            return obj == null || obj > 0;
+            return obj > 0;
         });
         return this;
     }

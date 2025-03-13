@@ -30,6 +30,7 @@ class StringSchemaTest {
     void required() {
         var schema = new StringSchema();
         assertEquals(true, schema.isValid(null));
+        assertEquals(true, schema.isValid(""));
         schema.required();
         assertEquals(true, schema.isValid("hexlet"));
         assertEquals(false, schema.isValid(null));

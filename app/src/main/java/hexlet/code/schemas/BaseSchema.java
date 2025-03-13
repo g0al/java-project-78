@@ -1,6 +1,6 @@
 package hexlet.code.schemas;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -13,10 +13,11 @@ import java.util.function.Predicate;
  */
 public abstract class BaseSchema<T> {
 
+    boolean strictNullChecking = false;
     /**
      * A map storing validation predicates associated with specific keys.
      */
-    private final Map<String, Predicate<T>> validations = new HashMap<>();
+    private final Map<String, Predicate<T>> validations = new LinkedHashMap<>();
 
     /**
      * Adds a validation predicate to the schema.
@@ -36,17 +37,9 @@ public abstract class BaseSchema<T> {
      * @return {@code true} if the value is valid, {@code false} otherwise.
      */
     public boolean isValid(final T value) {
-        if (validations.containsKey("required") && (value == null)) {
-            return false;
-        }
-        if (value == null) {
+        if (!strictNullChecking && !validations.get("required").test(value)) {
             return true;
         }
-        for (Predicate<T> predicate : validations.values()) {
-            if (!predicate.test(value)) {
-                return false;
-            }
-        }
-        return true;
+        return validations.values().stream().allMatch(predicate -> predicate.test(value));
     }
 }

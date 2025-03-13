@@ -9,12 +9,19 @@ import java.util.Objects;
  */
 public final class StringSchema extends BaseSchema<String> {
 
+
+    public StringSchema() {
+        addValidation("required", obj -> {
+            return Objects.nonNull(obj);
+        });
+    }
     /**
      * Adds a validation to ensure that the string is not null and not empty.
      *
      * @return The current StringSchema instance for method chaining.
      */
     public StringSchema required() {
+        strictNullChecking = true;
         addValidation("required", obj -> {
             return Objects.nonNull(obj) && !obj.isEmpty();
         });
@@ -29,7 +36,7 @@ public final class StringSchema extends BaseSchema<String> {
      */
     public StringSchema minLength(final int min) {
         addValidation("minLength", obj -> {
-            return Objects.nonNull(obj) && obj.length() >= min;
+            return obj.length() >= min;
         });
         return this;
     }
@@ -41,7 +48,7 @@ public final class StringSchema extends BaseSchema<String> {
      * @return The current StringSchema instance for method chaining.
      */
     public StringSchema contains(final String str) {
-        addValidation("contains", obj -> obj == null || obj.contains(str));
+        addValidation("contains", obj -> obj.contains(str));
         return this;
     }
 }

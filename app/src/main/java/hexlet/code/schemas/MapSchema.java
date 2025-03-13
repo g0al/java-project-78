@@ -9,13 +9,17 @@ import java.util.Objects;
  */
 public final class MapSchema extends BaseSchema<Map<String, ?>> {
 
+
+    public MapSchema() {
+        addValidation("required", Objects::nonNull);
+    }
     /**
      * Adds a validation to ensure that the map is not null.
      *
      * @return The current MapSchema instance for method chaining.
      */
     public MapSchema required() {
-        addValidation("required", obj -> Objects.nonNull(obj));
+        strictNullChecking = true;
         return this;
     }
 
